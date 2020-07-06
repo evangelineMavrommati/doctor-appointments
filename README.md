@@ -12,7 +12,7 @@
 * Install gems  
 `bundle install` 
 
-* Seed data
+* Seed data  
 `rails db:seed`
 
 * To start local server  
