@@ -1,6 +1,8 @@
 class AppointmentsController < ApplicationController
   before_action :find_doctor
 
+  # GET /doctors/:id/appointments -- will show all appointments for that doctor
+  # GET /doctors/:id/appointments { time: "07-07-2020" } -- show you all appointments for that doctor for that day
   def index
     if params[:time].present?
       time = DateTime.parse(params[:time])
@@ -11,6 +13,7 @@ class AppointmentsController < ApplicationController
     render json: @appointments
   end
 
+  # POST /doctors/:id/appointments
   def create
     time = DateTime.parse(params[:time])
 
@@ -29,6 +32,7 @@ class AppointmentsController < ApplicationController
     render json: @appointment
   end
 
+  # DELETE /doctors/:id/appointment/:id
   def destroy
     @appointment = Appointment.find(params[:id])
     head :no_content
