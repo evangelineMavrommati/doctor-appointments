@@ -23,7 +23,10 @@ GET `/doctors`
 GET `/doctors/:id`   
 
 GET `/doctors/:id/appointments`   
-GET `/doctors/:id/appointments { time: "07-07-2020" }`   
+GET `/doctors/:id/appointments`   
+```
+{ time: "07-07-2020" }
+```
 POST `/doctors/:id/appointments`   
   ```
   {
